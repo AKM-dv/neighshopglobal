@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>NeighShop Global</title>
+    <title>NeighShop Global - Digital Marketing Agency</title>
+    <style>
+        @media (max-width: 768px) {
+            .mobile-text-4xl { font-size: 2.5rem !important; }
+            .mobile-text-6xl { font-size: 3rem !important; }
+            .mobile-px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .mobile-py-16 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+        }
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body>
     <div id="root"></div>
@@ -161,7 +172,7 @@
             // Hero Section
             React.createElement('section', { 
               id: "home",
-              className: "min-h-screen flex items-center justify-center relative overflow-hidden"
+              className: "min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
             },
               // Background Image
               React.createElement('div', { className: "absolute inset-0" },
@@ -175,39 +186,39 @@
 
               // Animated Background Elements  
               React.createElement('div', { className: "absolute inset-0" },
-                React.createElement('div', { className: "absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse" }),
-                React.createElement('div', { className: "absolute bottom-20 right-20 w-96 h-96 bg-gray-500/5 rounded-full blur-3xl animate-pulse delay-1000" }),
-                React.createElement('div', { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gray-400/5 rounded-full blur-3xl animate-pulse delay-500" })
+                React.createElement('div', { className: "absolute top-20 left-4 sm:left-20 w-48 sm:w-72 h-48 sm:h-72 bg-white/5 rounded-full blur-3xl animate-pulse" }),
+                React.createElement('div', { className: "absolute bottom-20 right-4 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-gray-500/5 rounded-full blur-3xl animate-pulse delay-1000" }),
+                React.createElement('div', { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-64 h-32 sm:h-64 bg-gray-400/5 rounded-full blur-3xl animate-pulse delay-500" })
               ),
               
               React.createElement('div', { className: "relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" },
                 React.createElement('div', { className: "transform transition-all duration-1000 translate-y-0 opacity-100" },
                   React.createElement('h1', { 
-                    className: "text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent animate-pulse"
+                    className: "text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent animate-pulse leading-tight"
                   }, "NeighShop Global"),
                   React.createElement('p', { 
-                    className: "text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
+                    className: "text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed px-2"
                   }, "A premier digital marketing agency delivering innovative solutions across India, US, Canada, and Australia"),
-                  React.createElement('div', { className: "flex flex-wrap justify-center gap-4 mb-12" },
+                  React.createElement('div', { className: "flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-2" },
                     countries.map((country, index) =>
                       React.createElement('span', {
                         key: index,
-                        className: "px-6 py-3 bg-gray-900/80 backdrop-blur-sm rounded-full text-sm border border-gray-700 hover:border-gray-500 transition-all duration-300 transform hover:scale-105 hover:bg-gray-800/80",
+                        className: "px-3 sm:px-6 py-2 sm:py-3 bg-gray-900/80 backdrop-blur-sm rounded-full text-xs sm:text-sm border border-gray-700 hover:border-gray-500 transition-all duration-300 transform hover:scale-105 hover:bg-gray-800/80",
                         style: { animationDelay: `${index * 0.1}s` }
                       }, country)
                     )
                   ),
                   React.createElement('a', {
                     href: "#services",
-                    className: "inline-flex items-center px-8 py-4 bg-white text-black rounded-full text-lg font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group"
+                    className: "inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-black rounded-full text-base sm:text-lg font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group"
                   }, 
                     "Explore Our Services",
-                    React.createElement(ArrowRight, { className: "ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" })
+                    React.createElement(ArrowRight, { className: "ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" })
                   )
                 )
               ),
               
-              React.createElement('div', { className: "absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" },
+              React.createElement('div', { className: "absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" },
                 React.createElement(ChevronDown)
               )
             ),
@@ -215,48 +226,48 @@
             // Services Section
             React.createElement('section', { 
               id: "services",
-              className: "py-20 bg-gradient-to-b from-black to-gray-900"
+              className: "py-12 sm:py-20 bg-gradient-to-b from-black to-gray-900"
             },
               React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" },
                 React.createElement('div', { 
-                  className: `text-center mb-16 transform transition-all duration-1000 ${isVisible.services ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`
+                  className: `text-center mb-12 sm:mb-16 transform transition-all duration-1000 ${isVisible.services ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`
                 },
                   React.createElement('h2', { 
-                    className: "text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+                    className: "text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
                   }, "Our Services"),
                   React.createElement('p', { 
-                    className: "text-xl text-gray-300 max-w-3xl mx-auto"
+                    className: "text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-2"
                   }, "Comprehensive digital solutions to elevate your brand and drive growth in the digital landscape")
                 ),
 
-                React.createElement('div', { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" },
+                React.createElement('div', { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" },
                   services.map((service, index) =>
                     React.createElement('div', {
                       key: index,
                       id: `service-${index}`,
-                      className: `group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 hover:border-gray-600 transition-all duration-500 transform hover:-translate-y-4 hover:shadow-2xl overflow-hidden ${isVisible[`service-${index}`] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`,
+                      className: `group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 hover:border-gray-600 transition-all duration-500 transform hover:-translate-y-2 sm:hover:-translate-y-4 hover:shadow-2xl overflow-hidden ${isVisible[`service-${index}`] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`,
                       style: { transitionDelay: `${index * 0.1}s` }
                     },
                       // Service Image
-                      React.createElement('div', { className: "relative h-48 overflow-hidden" },
+                      React.createElement('div', { className: "relative h-36 sm:h-48 overflow-hidden" },
                         React.createElement('img', {
                           src: service.image,
                           alt: service.title,
                           className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         }),
                         React.createElement('div', { className: "absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" }),
-                        React.createElement('div', { className: "absolute top-4 left-4 text-white group-hover:text-gray-200 transition-colors duration-300" },
+                        React.createElement('div', { className: "absolute top-3 sm:top-4 left-3 sm:left-4 text-white group-hover:text-gray-200 transition-colors duration-300" },
                           service.icon
                         )
                       ),
                       
                       // Service Content
-                      React.createElement('div', { className: "p-6" },
+                      React.createElement('div', { className: "p-4 sm:p-6" },
                         React.createElement('h3', { 
-                          className: "text-xl font-semibold mb-3 group-hover:text-white transition-colors duration-300"
+                          className: "text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-white transition-colors duration-300"
                         }, service.title),
                         React.createElement('p', { 
-                          className: "text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
+                          className: "text-sm sm:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed"
                         }, service.description)
                       ),
 
@@ -273,36 +284,36 @@
             // About Section
             React.createElement('section', { 
               id: "about",
-              className: "py-20 bg-black"
+              className: "py-12 sm:py-20 bg-black"
             },
               React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" },
-                React.createElement('div', { className: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" },
+                React.createElement('div', { className: "grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center" },
                   React.createElement('div', { 
                     className: `transform transition-all duration-1000 ${isVisible.about ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`
                   },
                     React.createElement('h2', { 
-                      className: "text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+                      className: "text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
                     }, "Why Choose NeighShop Global?"),
                     React.createElement('p', { 
-                      className: "text-lg text-gray-300 mb-8 leading-relaxed"
+                      className: "text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed"
                     }, "We're not just another digital marketing agency. We're your strategic partner in digital transformation, combining creativity with data-driven insights to deliver exceptional results."),
-                    React.createElement('div', { className: "space-y-6" },
+                    React.createElement('div', { className: "space-y-4 sm:space-y-6" },
                       [
-                        { icon: React.createElement(Globe, {className: "w-5 h-5"}), text: "Global reach with local expertise" },
-                        { icon: React.createElement(Zap, {className: "w-5 h-5"}), text: "Cutting-edge technology solutions" },
-                        { icon: React.createElement(Users, {className: "w-5 h-5"}), text: "24/7 dedicated support" },
-                        { icon: React.createElement(Award, {className: "w-5 h-5"}), text: "Proven track record of success" }
+                        { icon: React.createElement(Globe, {className: "w-4 h-4 sm:w-5 sm:h-5"}), text: "Global reach with local expertise" },
+                        { icon: React.createElement(Zap, {className: "w-4 h-4 sm:w-5 sm:h-5"}), text: "Cutting-edge technology solutions" },
+                        { icon: React.createElement(Users, {className: "w-4 h-4 sm:w-5 sm:h-5"}), text: "24/7 dedicated support" },
+                        { icon: React.createElement(Award, {className: "w-4 h-4 sm:w-5 sm:h-5"}), text: "Proven track record of success" }
                       ].map((item, index) =>
                         React.createElement('div', {
                           key: index,
-                          className: "flex items-center space-x-4 group",
+                          className: "flex items-center space-x-3 sm:space-x-4 group",
                           style: { animationDelay: `${index * 0.1}s` }
                         },
                           React.createElement('div', { 
-                            className: "p-2 bg-gray-800 rounded-full group-hover:bg-gray-700 transition-colors duration-300"
+                            className: "p-2 bg-gray-800 rounded-full group-hover:bg-gray-700 transition-colors duration-300 flex-shrink-0"
                           }, item.icon),
                           React.createElement('span', { 
-                            className: "text-gray-300 group-hover:text-white transition-colors duration-300"
+                            className: "text-sm sm:text-base text-gray-300 group-hover:text-white transition-colors duration-300"
                           }, item.text)
                         )
                       )
@@ -311,30 +322,32 @@
                   
                   // Stats Section
                   React.createElement('div', { 
-                    className: `transform transition-all duration-1000 delay-300 ${isVisible.about ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`
+                    className: `transform transition-all duration-1000 delay-300 ${isVisible.about ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'} mt-8 lg:mt-0`
                   },
                     React.createElement('div', { className: "relative" },
                       React.createElement('img', {
                         src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=center",
                         alt: "Team collaboration",
-                        className: "w-full h-64 object-cover rounded-2xl opacity-30"
+                        className: "w-full h-48 sm:h-64 object-cover rounded-2xl opacity-30"
                       }),
                       React.createElement('div', { className: "absolute inset-0 bg-gradient-to-br from-gray-900/80 to-black/80 rounded-2xl" }),
-                      React.createElement('div', { className: "absolute inset-0 p-8" },
-                        React.createElement('div', { className: "grid grid-cols-2 gap-6 h-full" },
+                      React.createElement('div', { className: "absolute inset-0 p-4 sm:p-8" },
+                        React.createElement('div', { className: "grid grid-cols-2 gap-4 sm:gap-6 h-full" },
                           stats.map((stat, index) =>
                             React.createElement('div', {
                               key: index,
                               className: "text-center group transform transition-all duration-300 hover:scale-105"
                             },
                               React.createElement('div', { 
-                                className: "text-white mb-2 flex justify-center group-hover:scale-110 transition-transform duration-300"
-                              }, stat.icon),
+                                className: "text-white mb-1 sm:mb-2 flex justify-center group-hover:scale-110 transition-transform duration-300"
+                              }, 
+                                React.cloneElement(stat.icon, { className: "w-6 h-6 sm:w-8 sm:h-8" })
+                              ),
                               React.createElement('div', { 
-                                className: "text-3xl font-bold text-white mb-2 group-hover:text-gray-200 transition-colors duration-300"
+                                className: "text-xl sm:text-3xl font-bold text-white mb-1 sm:mb-2 group-hover:text-gray-200 transition-colors duration-300"
                               }, stat.number),
                               React.createElement('div', { 
-                                className: "text-gray-300 text-sm group-hover:text-white transition-colors duration-300"
+                                className: "text-gray-300 text-xs sm:text-sm group-hover:text-white transition-colors duration-300 leading-tight"
                               }, stat.label)
                             )
                           )
@@ -349,44 +362,44 @@
             // Contact Section
             React.createElement('section', { 
               id: "contact",
-              className: "py-20 bg-gradient-to-b from-gray-900 to-black"
+              className: "py-12 sm:py-20 bg-gradient-to-b from-gray-900 to-black"
             },
               React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" },
                 React.createElement('div', { 
                   className: `transform transition-all duration-1000 ${isVisible.contact ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`
                 },
                   React.createElement('h2', { 
-                    className: "text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+                    className: "text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
                   }, "Ready to Get Started?"),
                   React.createElement('p', { 
-                    className: "text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+                    className: "text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
                   }, "Let's discuss how we can help transform your digital presence and drive your business forward"),
                   
                   React.createElement('a', {
                     href: "https://wa.me/918307802643",
                     target: "_blank",
                     rel: "noopener noreferrer",
-                    className: "inline-flex items-center px-8 py-4 bg-green-600 hover:bg-green-500 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 group"
+                    className: "inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-green-600 hover:bg-green-500 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 group"
                   },
-                    React.createElement(MessageCircle, { className: "mr-3 w-6 h-6 group-hover:animate-pulse" }),
+                    React.createElement(MessageCircle, { className: "mr-2 sm:mr-3 w-5 h-5 sm:w-6 sm:h-6 group-hover:animate-pulse" }),
                     "Chat on WhatsApp"
                   ),
                   
-                  React.createElement('div', { className: "mt-8 text-gray-400" },
-                    React.createElement('p', { className: "text-lg" }, "+91 8307802643")
+                  React.createElement('div', { className: "mt-6 sm:mt-8 text-gray-400" },
+                    React.createElement('p', { className: "text-base sm:text-lg" }, "+91 8307802643")
                   )
                 )
               )
             ),
 
             // Footer
-            React.createElement('footer', { className: "py-8 border-t border-gray-800 bg-black" },
+            React.createElement('footer', { className: "py-6 sm:py-8 border-t border-gray-800 bg-black" },
               React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" },
                 React.createElement('div', { 
-                  className: "text-2xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+                  className: "text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
                 }, "NeighShop Global"),
                 React.createElement('p', { 
-                  className: "text-gray-400"
+                  className: "text-gray-400 text-sm sm:text-base px-2"
                 }, "© 2025 NeighShop Global. Transforming businesses across India, US, Canada & Australia.")
               )
             )
