@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighshop Global - Launch Your Online Store in Days</title>
+    <meta name="description" content="Launch your ecommerce store with Neighshop Global. Get a fully customized online store, admin panel, payment integration, and mobile apps - all within days.">
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '787496407041191');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=787496407041191&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Modern Header */
+        .header {
+            background: rgba(47, 60, 126, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: white;
+            padding: 1.25rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4CAF50;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Modern Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2F3C7E 0%, #1e3a8a 50%, #1e40af 100%);
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        /* Modern CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(76, 175, 80, 0.4);
+        }
+        
+        /* Modern Features Section */
+        .features {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 4rem;
+            color: #1e293b;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .feature-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+        
+        /* Modern Demo Section */
+        .demo {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+        
+        .demo-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 3rem auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+            transform: perspective(1000px) rotateX(5deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-container:hover {
+            transform: perspective(1000px) rotateX(0deg);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        
+        /* Modern Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #2F3C7E;
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .pricing-card.featured::after {
+            content: 'Most Popular';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .price-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #64748b;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .price-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Modern Clients Section */
+        .clients {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .client-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .client-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .client-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .client-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .client-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .client-card p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+        
+        .client-card a {
+            color: #2F3C7E;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .client-card a:hover {
+            color: #4CAF50;
+            transform: translateX(5px);
+        }
+        
+        /* Modern Why Choose Us */
+        .why-choose {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex-shrink: 0;
+        }
+        
+        .benefit-item h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-item p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Modern Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 3rem;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -1rem;
+            left: 2rem;
+            font-size: 4rem;
+            color: #2F3C7E;
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: #2F3C7E;
+            font-size: 1.1rem;
+        }
+        
+        /* Modern Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2F3C7E 0%, #1e3a8a 50%, #1e40af 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain2" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain2)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .final-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Modern Footer */
+        .footer {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        /* Modern Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            border: 3px solid white;
+        }
+        
+        .floating-whatsapp:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .features-grid,
+            .pricing-grid,
+            .clients-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+        }
+        
+        /* Modern Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #1e3a8a, #45a049);
+        }
+        
+        /* Popup Modal */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-modal {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: scale(0.7) translateY(50px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        
+        .popup-overlay.show .popup-modal {
+            transform: scale(1) translateY(0);
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            transition: color 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .popup-close:hover {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+        
+        .popup-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .popup-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        
+        .popup-message {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .popup-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .popup-button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .popup-button.primary {
+            background: linear-gradient(135deg, #2F3C7E, #4CAF50);
+            color: white;
+            box-shadow: 0 10px 25px rgba(47, 60, 126, 0.3);
+        }
+        
+        .popup-button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(47, 60, 126, 0.4);
+        }
+        
+        .popup-button.secondary {
+            background: white;
+            color: #2F3C7E;
+            border: 2px solid #2F3C7E;
+        }
+        
+        .popup-button.secondary:hover {
+            background: #2F3C7E;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .popup-modal {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .popup-buttons {
+                flex-direction: column;
+            }
+            
+            .popup-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-modal">
+            <button class="popup-close" onclick="closePopup()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="popup-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3 class="popup-title">Limited Time Offer!</h3>
+            <p class="popup-message">Only 2 slots left for this month. Don't miss out on launching your ecommerce store!</p>
+            <div class="popup-buttons">
+                <button class="popup-button primary" onclick="openWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Book Demo Now
+                </button>
+                <button class="popup-button secondary" onclick="closePopup()">
+                    Maybe Later
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/babel">
+        function App() {
+            const [activeSection, setActiveSection] = React.useState('hero');
+            
+            const scrollToSection = (sectionId) => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+            
+            const openWhatsApp = () => {
+                const message = encodeURIComponent("I want to know about ecommerce platform");
+                window.open(`https://wa.me/918307802643?text=${message}`, '_blank');
+            };
+            
+            return (
+                <div>
+                    {/* Header */}
+                    <header className="header">
+                        <div className="container">
+                            <nav className="nav">
+                                <div className="logo">Neighshop Global</div>
+                                <ul className="nav-links">
+                                    <li><a href="#features" onClick={() => scrollToSection('features')}>Features</a></li>
+                                    <li><a href="#pricing" onClick={() => scrollToSection('pricing')}>Pricing</a></li>
+                                    <li><a href="#clients" onClick={() => scrollToSection('clients')}>Clients</a></li>
+                                    <li><a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
+
+                    {/* Hero Section */}
+                    <section id="hero" className="hero">
+                        <div className="container">
+                            <h1 className="fade-in-up">Launch Your Online Store — Fully Powered & Delivered Within Days</h1>
+                            <p className="fade-in-up">From domain to Android app — Neighshop Global gives founders and small business owners the fastest, easiest, and most affordable way to go live.</p>
+                            <button className="cta-button fade-in-up" onClick={openWhatsApp}>
+                                <i className="fab fa-whatsapp"></i> Start on WhatsApp Now
+                            </button>
+                        </div>
+                    </section>
+
+                    {/* Features Section */}
+                    <section id="features" className="features">
+                        <div className="container">
+                            <h2 className="section-title">All-In-One Ecommerce Platform — Without Breaking The Bank</h2>
+                            <div className="features-grid">
+                                <div className="feature-card">
+                                    <div className="feature-icon"><i className="fas fa-store"></i></div>
+                                    <h3>Fully Customised Online Store</h3>
+                                    <p>Get a beautiful, responsive ecommerce website tailored to your brand and products.</p>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon"><i className="fas fa-cogs"></i></div>
+                                    <h3>Easy Admin Panel</h3>
+                                    <p>Manage products, orders, and customers with our intuitive admin dashboard.</p>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon"><i className="fas fa-credit-card"></i></div>
+                                    <h3>Payment Gateway Integration</h3>
+                                    <p>Accept payments with Razorpay or your preferred payment gateway.</p>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon"><i className="fas fa-shipping-fast"></i></div>
+                                    <h3>Shipping Partner</h3>
+                                    <p>Integrated with Shiprocket or your preferred shipping partner.</p>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon"><i className="fas fa-globe"></i></div>
+                                    <h3>Free Domain + Hosting</h3>
+                                    <p>Get your domain and hosting included in the package.</p>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon"><i className="fab fa-android"></i></div>
+                                    <h3>Android App for Your Brand</h3>
+                                    <p>Native Android app ready for Google Play Store.</p>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon"><i className="fab fa-apple"></i></div>
+                                    <h3>iOS App (Optional)</h3>
+                                    <p>Native iOS app ready for App Store deployment.</p>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon"><i className="fab fa-whatsapp"></i></div>
+                                    <h3>WhatsApp Support & Setup</h3>
+                                    <p>Personal assistance throughout setup and ongoing support.</p>
+                                </div>
+                            </div>
+                            <p style={{textAlign: 'center', marginTop: '2rem', fontSize: '1.1rem', color: '#666'}}>
+                                💬 Everything you need to launch and grow your online brand — built for founders who don't have time to figure it all out.
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Demo Section */}
+                    <section id="demo" className="demo">
+                        <div className="container">
+                            <div className="demo-content">
+                                <h2 className="section-title">👀 Watch Admin Panel In Action</h2>
+                                <p style={{fontSize: '1.1rem', marginBottom: '2rem'}}>See how easily you can manage your products, orders, payments, and more.</p>
+                                <div className="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/vfWpVeUlJxM?si=JsDqvYlMl3mcwgOX" 
+                                        title="Admin Panel Demo"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowFullScreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Pricing Section */}
+                    <section id="pricing" className="pricing">
+                        <div className="container">
+                            <h2 className="section-title">Affordable & Transparent Plans</h2>
+                            <div className="pricing-grid">
+                                <div className="pricing-card">
+                                    <h3>🟦 Website Only</h3>
+                                    <div className="price">₹15,000</div>
+                                    <ul className="price-features">
+                                        <li>Full ecommerce store</li>
+                                        <li>Free domain & hosting</li>
+                                        <li>Admin panel</li>
+                                        <li>Payment integration</li>
+                                        <li>Shipping integration</li>
+                                        <li>WhatsApp support</li>
+                                    </ul>
+                                    <button className="cta-button" onClick={openWhatsApp}>Get Started</button>
+                                </div>
+                                <div className="pricing-card featured">
+                                    <h3>🟦 Website + Android App</h3>
+                                    <div className="price">₹20,000</div>
+                                    <ul className="price-features">
+                                        <li>Everything in Website Only</li>
+                                        <li>Play Store-ready Android App</li>
+                                        <li>Push notifications</li>
+                                        <li>App customization</li>
+                                        <li>App store listing</li>
+                                        <li>Ongoing app support</li>
+                                    </ul>
+                                    <button className="cta-button" onClick={openWhatsApp}>Most Popular</button>
+                                </div>
+                                <div className="pricing-card">
+                                    <h3>🟦 Website + Android + iOS</h3>
+                                    <div className="price">₹30,000</div>
+                                    <ul className="price-features">
+                                        <li>Everything in Android package</li>
+                                        <li>iOS App for App Store</li>
+                                        <li>Cross-platform sync</li>
+                                        <li>Advanced features</li>
+                                        <li>Priority support</li>
+                                        <li>Custom integrations</li>
+                                    </ul>
+                                    <button className="cta-button" onClick={openWhatsApp}>Get Started</button>
+                                </div>
+                            </div>
+                            <p style={{textAlign: 'center', marginTop: '2rem', fontSize: '1.1rem', color: '#666'}}>
+                                💡 No hidden charges. One-time setup cost. Everything you need to run your online brand.
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Clients Section */}
+                    <section id="clients" className="clients">
+                        <div className="container">
+                            <h2 className="section-title">Explore Some Brands We've Built</h2>
+                            <div className="clients-grid">
+                                <div className="client-card">
+                                    <h3>Iymbulan</h3>
+                                    <p>Fashion & Lifestyle</p>
+                                    <a href="https://iymbulan.com/" target="_blank" rel="noopener noreferrer">
+                                        <i className="fas fa-external-link-alt"></i> Visit Site
+                                    </a>
+                                </div>
+                                <div className="client-card">
+                                    <h3>Knyamed</h3>
+                                    <p>Healthcare & Wellness</p>
+                                    <a href="https://knyamed.com/" target="_blank" rel="noopener noreferrer">
+                                        <i className="fas fa-external-link-alt"></i> Visit Site
+                                    </a>
+                                </div>
+                                <div className="client-card">
+                                    <h3>Star Fusion</h3>
+                                    <p>Electronics & Gadgets</p>
+                                    <a href="https://starfusion.in/" target="_blank" rel="noopener noreferrer">
+                                        <i className="fas fa-external-link-alt"></i> Visit Site
+                                    </a>
+                                </div>
+                                <div className="client-card">
+                                    <h3>Gym Shark</h3>
+                                    <p>Fitness & Sports</p>
+                                    <a href="https://gymshark.com/" target="_blank" rel="noopener noreferrer">
+                                        <i className="fas fa-external-link-alt"></i> Visit Site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Why Choose Us */}
+                    <section id="why-choose" className="why-choose">
+                        <div className="container">
+                            <h2 className="section-title">Why Neighshop Global?</h2>
+                            <div className="benefits-grid">
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><i className="fas fa-rocket"></i></div>
+                                    <div>
+                                        <h4>Fast Loading Speed</h4>
+                                        <p>Optimized for performance and user experience</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><i className="fas fa-credit-card"></i></div>
+                                    <div>
+                                        <h4>Payment & Shipping Integrated</h4>
+                                        <p>Ready-to-use payment and shipping solutions</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><i className="fas fa-tools"></i></div>
+                                    <div>
+                                        <h4>Easy-to-Use Admin Panel</h4>
+                                        <p>Intuitive dashboard for managing your store</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><i className="fas fa-briefcase"></i></div>
+                                    <div>
+                                        <h4>Ideal for Founders & Local Brands</h4>
+                                        <p>Built specifically for small business needs</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><i className="fas fa-mobile-alt"></i></div>
+                                    <div>
+                                        <h4>Android & iOS App Support</h4>
+                                        <p>Native mobile apps for your brand</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><i className="fab fa-whatsapp"></i></div>
+                                    <div>
+                                        <h4>Personalised WhatsApp Assistance</h4>
+                                        <p>Direct support through WhatsApp</p>
+                                    </div>
+                                </div>
+                                <div className="benefit-item">
+                                    <div className="benefit-icon"><i className="fas fa-coins"></i></div>
+                                    <div>
+                                        <h4>One-Time Affordable Setup</h4>
+                                        <p>No recurring fees, just one-time payment</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Testimonials */}
+                    <section id="testimonials" className="testimonials">
+                        <div className="container">
+                            <h2 className="section-title">What Our Clients Say</h2>
+                            <div className="testimonial-card">
+                                <p className="testimonial-text">
+                                    "Launched my online store in 4 days — the process was smooth and team handled everything. Highly recommended!"
+                                </p>
+                                <div className="testimonial-author">- Harsh, Fashion Store Owner</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Final CTA */}
+                    <section id="contact" className="final-cta">
+                        <div className="container">
+                            <h2 style={{fontSize: '2.5rem', marginBottom: '1rem'}}>Start Building Your Brand Today</h2>
+                            <p style={{fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9}}>
+                                Ready to sell online? Let's get your store live — without the stress.
+                            </p>
+                            <button className="cta-button" onClick={openWhatsApp}>
+                                <i className="fab fa-whatsapp"></i> Start on WhatsApp
+                            </button>
+                                                         <p style={{marginTop: '1rem', opacity: 0.8}}>
+                                 💬 "I want to know about ecommerce platform"
+                             </p>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="footer">
+                        <div className="container">
+                            <p>&copy; 2024 Neighshop Global. All rights reserved.</p>
+                            <p style={{marginTop: '0.5rem'}}>
+                                <i className="fab fa-whatsapp"></i> +91 8307802643 | 
+                                <i className="fas fa-envelope" style={{marginLeft: '1rem'}}></i> info@neighshopglobal.com
+                            </p>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        // Render the app
+        ReactDOM.render(<App />, document.getElementById('root'));
+        
+        // Global function for WhatsApp
+        window.openWhatsApp = function() {
+            const message = encodeURIComponent("I want to know about ecommerce platform");
+            window.open(`https://wa.me/918307802643?text=${message}`, '_blank');
+        };
+        
+        // Popup functions
+        window.closePopup = function() {
+            const popup = document.getElementById('popupOverlay');
+            popup.classList.remove('show');
+        };
+        
+        // Show popup after 15 seconds
+        setTimeout(function() {
+            const popup = document.getElementById('popupOverlay');
+            popup.classList.add('show');
+        }, 15000);
+        
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
