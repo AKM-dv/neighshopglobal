@@ -932,7 +932,7 @@
             <h3 class="popup-title">Limited Time Offer!</h3>
             <p class="popup-message">Only 2 slots left for this month. Don't miss out on launching your ecommerce store!</p>
             <div class="popup-buttons">
-                <button class="popup-button primary" onclick="openWhatsApp()">
+                <button class="popup-button primary" onclick="openWhatsApp('Popup CTA')">
                     <i class="fab fa-whatsapp"></i> Book Demo Now
                 </button>
                 <button class="popup-button secondary" onclick="closePopup()">
@@ -953,7 +953,17 @@
                 }
             };
             
-            const openWhatsApp = () => {
+            const openWhatsApp = (eventName = 'Lead') => {
+                // Track the event with Facebook Pixel
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        content_name: eventName,
+                        content_category: 'Ecommerce Platform',
+                        value: 1.00,
+                        currency: 'INR'
+                    });
+                }
+                
                 const message = encodeURIComponent("I want to know about ecommerce platform");
                 window.open(`https://wa.me/918307802643?text=${message}`, '_blank');
             };
@@ -980,7 +990,7 @@
                         <div className="container">
                             <h1 className="fade-in-up">Launch Your Online Store — Fully Powered & Delivered Within Days</h1>
                             <p className="fade-in-up">From domain to Android app — Neighshop Global gives founders and small business owners the fastest, easiest, and most affordable way to go live.</p>
-                            <button className="cta-button fade-in-up" onClick={openWhatsApp}>
+                            <button className="cta-button fade-in-up" onClick={() => openWhatsApp('Hero CTA')}>
                                 <i className="fab fa-whatsapp"></i> Start on WhatsApp Now
                             </button>
                         </div>
@@ -1072,7 +1082,7 @@
                                         <li>Shipping integration</li>
                                         <li>WhatsApp support</li>
                                     </ul>
-                                    <button className="cta-button" onClick={openWhatsApp}>Get Started</button>
+                                    <button className="cta-button" onClick={() => openWhatsApp('Website Only Package')}>Get Started</button>
                                 </div>
                                 <div className="pricing-card featured">
                                     <h3>🟦 Website + Android App</h3>
@@ -1085,7 +1095,7 @@
                                         <li>App store listing</li>
                                         <li>Ongoing app support</li>
                                     </ul>
-                                    <button className="cta-button" onClick={openWhatsApp}>Most Popular</button>
+                                    <button className="cta-button" onClick={() => openWhatsApp('Website + Android Package')}>Most Popular</button>
                                 </div>
                                 <div className="pricing-card">
                                     <h3>🟦 Website + Android + iOS</h3>
@@ -1098,7 +1108,7 @@
                                         <li>Priority support</li>
                                         <li>Custom integrations</li>
                                     </ul>
-                                    <button className="cta-button" onClick={openWhatsApp}>Get Started</button>
+                                    <button className="cta-button" onClick={() => openWhatsApp('Website + Android + iOS Package')}>Get Started</button>
                                 </div>
                             </div>
                             <p style={{textAlign: 'center', marginTop: '2rem', fontSize: '1.1rem', color: '#666'}}>
@@ -1222,7 +1232,7 @@
                             <p style={{fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9}}>
                                 Ready to sell online? Let's get your store live — without the stress.
                             </p>
-                            <button className="cta-button" onClick={openWhatsApp}>
+                            <button className="cta-button" onClick={() => openWhatsApp('Final CTA')}>
                                 <i className="fab fa-whatsapp"></i> Start on WhatsApp
                             </button>
                                                          <p style={{marginTop: '1rem', opacity: 0.8}}>
@@ -1249,7 +1259,17 @@
         ReactDOM.render(<App />, document.getElementById('root'));
         
         // Global function for WhatsApp
-        window.openWhatsApp = function() {
+        window.openWhatsApp = function(eventName = 'Floating WhatsApp') {
+            // Track the event with Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: eventName,
+                    content_category: 'Ecommerce Platform',
+                    value: 1.00,
+                    currency: 'INR'
+                });
+            }
+            
             const message = encodeURIComponent("I want to know about ecommerce platform");
             window.open(`https://wa.me/918307802643?text=${message}`, '_blank');
         };
@@ -1258,12 +1278,31 @@
         window.closePopup = function() {
             const popup = document.getElementById('popupOverlay');
             popup.classList.remove('show');
+            
+            // Track popup close
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'CustomEvent', {
+                    event_name: 'Popup Closed',
+                    content_name: 'Limited Time Offer Popup',
+                    content_category: 'Ecommerce Platform'
+                });
+            }
         };
         
         // Show popup after 15 seconds
         setTimeout(function() {
             const popup = document.getElementById('popupOverlay');
             popup.classList.add('show');
+            
+            // Track popup view
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'ViewContent', {
+                    content_name: 'Limited Time Offer Popup',
+                    content_category: 'Ecommerce Platform',
+                    value: 1.00,
+                    currency: 'INR'
+                });
+            }
         }, 15000);
         
         // Smooth scrolling for anchor links
@@ -1276,8 +1315,34 @@
                     const targetElement = document.getElementById(targetId);
                     if (targetElement) {
                         targetElement.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Track section navigation
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'ViewContent', {
+                                content_name: targetId.charAt(0).toUpperCase() + targetId.slice(1) + ' Section',
+                                content_category: 'Ecommerce Platform'
+                            });
+                        }
                     }
                 });
+            });
+            
+            // Track scroll depth for engagement
+            let maxScroll = 0;
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                
+                if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+                    maxScroll = scrollPercent;
+                    
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'CustomEvent', {
+                            event_name: 'Scroll Depth',
+                            content_name: scrollPercent + '% Scroll',
+                            content_category: 'Ecommerce Platform'
+                        });
+                    }
+                }
             });
         });
     </script>
