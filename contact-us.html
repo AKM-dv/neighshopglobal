@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NeighShopGlobal</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="https://github.com/AKM-dv/servicemate_landing/blob/main/Group%2064.png?raw=true" alt="NeighShopGlobal Logo">
+                        <span class="brand-text">NeighShopGlobal</span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html#features">Features</a></li>
+                    <li><a href="../index.html#how-it-works">How It Works</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Page -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-container">
+                <h1>Contact Us</h1>
+                <p>Have questions about ServiceMate by NeighShopGlobal? We're here to help! Fill out the form below and we'll get back to you as soon as possible.</p>
+                
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #000;">
+                    <h3 style="margin-bottom: 1rem; color: #000;">Payment Gateway Integration</h3>
+                    <p style="margin-bottom: 0.5rem;"><strong>NeighShopGlobal requires payment gateway integration for:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>Service Payments:</strong> Accepting payments from clients for services booked through the platform</li>
+                        <li><strong>Monthly Subscriptions:</strong> Generating monthly payment links for platform owners to manage recurring payments easily</li>
+                    </ul>
+                    <p style="margin-top: 1rem; margin-bottom: 0;">All payment transactions are processed securely through our integrated payment gateway system to ensure safe and reliable payment processing.</p>
+                </div>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name (Optional)</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="payment-gateway">Payment Gateway Integration</option>
+                            <option value="platform-setup">Platform Setup</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="billing">Billing & Subscriptions</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-large">Send Message</button>
+                </form>
+
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e0e0e0;">
+                    <h3 style="margin-bottom: 1rem;">Other Ways to Reach Us</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Email</h4>
+                            <p><a href="mailto:info@neighshopglobal.com" style="color: #000; text-decoration: none;">info@neighshopglobal.com</a></p>
+                            <p><a href="mailto:support@neighshopglobal.com" style="color: #000; text-decoration: none;">support@neighshopglobal.com</a></p>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://github.com/AKM-dv/servicemate_landing/blob/main/Group%2064.png?raw=true" alt="NeighShopGlobal Logo">
+                        <span class="brand-text">NeighShopGlobal</span>
+                    </div>
+                    <p>Empowering businesses to create their own service marketplace platforms.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../index.html#how-it-works">How It Works</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+                        <li><a href="cancellation-refunds.html">Cancellation & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@neighshopglobal.com">info@neighshopglobal.com</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NeighShopGlobal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // WhatsApp redirect for contact form
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const company = document.getElementById('company').value.trim();
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value.trim();
+                
+                // Basic validation
+                if (!name || !email || !phone || !subject || !message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Format message for WhatsApp
+                let whatsappMessage = `*Contact Form Submission - NeighShopGlobal*\n\n`;
+                whatsappMessage += `*Name:* ${name}\n`;
+                whatsappMessage += `*Email:* ${email}\n`;
+                whatsappMessage += `*Phone:* ${phone}\n`;
+                if (company) {
+                    whatsappMessage += `*Company:* ${company}\n`;
+                }
+                whatsappMessage += `*Subject:* ${subject}\n\n`;
+                whatsappMessage += `*Message:*\n${message}`;
+                
+                // Encode message for URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                // WhatsApp number: +918307802643 (remove + for URL)
+                const whatsappNumber = '918307802643';
+                
+                // Create WhatsApp URL
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                
+                // Open WhatsApp in new tab/window
+                window.open(whatsappUrl, '_blank');
+                
+                // Optional: Show success message
+                alert('Redirecting to WhatsApp... Please send the message to complete your inquiry.');
+            });
+        }
+    </script>
+</body>
+</html>
+

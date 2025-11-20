@@ -410,14 +410,99 @@ src="https://www.facebook.com/tr?id=787496407041191&ev=PageView&noscript=1"
             ),
 
             // Footer
-            React.createElement('footer', { className: "py-6 sm:py-8 border-t border-gray-800 bg-black" },
-              React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" },
-                React.createElement('div', { 
-                  className: "text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
-                }, "NeighShop Global"),
-                React.createElement('p', { 
-                  className: "text-gray-400 text-sm sm:text-base px-2"
-                }, "© 2025 NeighShop Global. Transforming businesses across India, US, Canada & Australia.")
+            React.createElement('footer', { className: "py-8 sm:py-12 border-t border-gray-800 bg-black" },
+              React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" },
+                React.createElement('div', { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8" },
+                  // Company Info
+                  React.createElement('div', {},
+                    React.createElement('div', { 
+                      className: "text-xl sm:text-2xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+                    }, "NeighShop Global"),
+                    React.createElement('p', { 
+                      className: "text-gray-400 text-sm sm:text-base"
+                    }, "Transforming businesses across India, US, Canada & Australia.")
+                  ),
+                  
+                  // Quick Links
+                  React.createElement('div', {},
+                    React.createElement('h3', { 
+                      className: "text-white font-semibold mb-4 text-sm sm:text-base"
+                    }, "Quick Links"),
+                    React.createElement('div', { className: "space-y-2" },
+                      React.createElement('a', { 
+                        href: "#home", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "Home"),
+                      React.createElement('a', { 
+                        href: "#services", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "Services"),
+                      React.createElement('a', { 
+                        href: "#about", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "About"),
+                      React.createElement('a', { 
+                        href: "#contact", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "Contact")
+                    )
+                  ),
+                  
+                  // Legal Pages
+                  React.createElement('div', {},
+                    React.createElement('h3', { 
+                      className: "text-white font-semibold mb-4 text-sm sm:text-base"
+                    }, "Legal"),
+                    React.createElement('div', { className: "space-y-2" },
+                      React.createElement('a', { 
+                        href: "privacy.html", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "Privacy"),
+                      React.createElement('a', { 
+                        href: "terms-and-conditions.html", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "Terms and Conditions"),
+                      React.createElement('a', { 
+                        href: "cancellation-refunds.html", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "Cancellation & Refunds"),
+                      React.createElement('a', { 
+                        href: "shipping.html", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "Shipping")
+                    )
+                  ),
+                  
+                  // Contact
+                  React.createElement('div', {},
+                    React.createElement('h3', { 
+                      className: "text-white font-semibold mb-4 text-sm sm:text-base"
+                    }, "Contact"),
+                    React.createElement('div', { className: "space-y-2" },
+                      React.createElement('a', { 
+                        href: "contact-us.html", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "Contact Us"),
+                      React.createElement('a', { 
+                        href: "mailto:info@neighshopglobal.com", 
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "info@neighshopglobal.com"),
+                      React.createElement('a', { 
+                        href: "https://wa.me/918307802643", 
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        className: "block text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      }, "WhatsApp: +91 8307802643")
+                    )
+                  )
+                ),
+                
+                // Copyright
+                React.createElement('div', { className: "border-t border-gray-800 pt-6 text-center" },
+                  React.createElement('p', { 
+                    className: "text-gray-400 text-sm sm:text-base"
+                  }, "© 2025 NeighShop Global. All rights reserved.")
+                )
               )
             )
           );
